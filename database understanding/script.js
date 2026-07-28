@@ -1,5 +1,9 @@
 // This is a simple simulation of a login system and news feed display for a social media platform.
-var database = [{ username: 'john_doe', password: 'password123' }];
+var database = [
+  { username: 'john_doe', password: 'password123' },
+  { username: 'jane_doe', password: 'qwerty' },
+  { username: 'sam_smith', password: 'abc123' },
+];
 
 // The newsFeed array contains objects representing posts made by users. Each object has a username and a timeline message.
 var newsFeed = [
