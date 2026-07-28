@@ -16,14 +16,22 @@ var newsFeed = [
 var userNamePrompt = prompt("What's your username?");
 var passwordPrompt = prompt("What's your password?");
 
-// The signIn function checks if the provided username and password match any entry in the database. If a match is found, it logs the news feed to the console. If not, it logs an error message.
-function signIn(userName, password) {
+// The isUserValid function checks if the provided username and password match any entry in the database. It iterates through the database array and returns true if a match is found, otherwise it returns false.
+function isUserValid(userName, password) {
   for (var i = 0; i < database.length; i++) {
     if (database[i].username === userName && database[i].password === password) {
-      console.log(newsFeed);
-      return;
+      return true;
     }
   }
-  console.log('Sorry, wrong username and password.');
+  return false;
+}
+
+// The signIn function checks if the provided username and password match any entry in the database. If a match is found, it logs the news feed to the console. If not, it logs an error message.
+function signIn(userName, password) {
+  if (isUserValid(userName, password)) {
+    console.log(newsFeed);
+  } else {
+    alert('Sorry, wrong username and password.');
+  }
 }
 signIn(userNamePrompt, passwordPrompt);
