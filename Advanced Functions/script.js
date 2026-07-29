@@ -6,7 +6,7 @@ const first = () => {
   };
   return second;
 };
-
+//The second function is returned and assigned to the variable newFunc. When newFunc is called, it still has access to the greet variable from the first function's scope, even though first has already finished executing.
 const newFunc = first();
 newFunc();
 
@@ -20,3 +20,9 @@ console.log(multiplyBy5(2)); //Output: 10
 const compose = (f, g) => (a) => f(g(a));
 const sum = (num) => num + 1;
 console.log(compose(sum, sum)(5)); //Output: 7
+
+//Avoiding Side Effects and Functional Purity - A function is considered pure if it always produces the same output for the same input and does not cause any side effects (like modifying external variables or state). This makes functions easier to reason about and test.
+let a = 1; //This variable is in the global scope and can be modified by any function, leading to potential side effects.
+const pureFunction = (num) => num * 2; // This function is pure because it always produces the same output for the same input and does not modify any external state.
+//deterministic function - a function that always produces the same output for the same input. This is important for functional programming because it allows for easier reasoning about code and testing.
+const deterministicFunction = (num) => num + 3; // This function is deterministic because it always produces the same output for the same input.
