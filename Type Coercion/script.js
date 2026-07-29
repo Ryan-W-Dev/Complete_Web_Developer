@@ -1,27 +1,27 @@
-// Type Coercion
-// Type coercion is the process of converting a value from one type to another (such as strings to numbers, objects to booleans, etc.) in JavaScript. This can happen implicitly (automatically) or explicitly (manually).
+// Type coercion
+// JavaScript can convert values from one type to another automatically or manually.
 
-// Type coercion can lead to unexpected results if not handled carefully. Here are some examples:
-// Implicit coercion
-console.log('5' + 1); // '51' (string concatenation)
-console.log('5' - 1); // 4 (number subtraction)
-console.log(true + 1); // 2 (true is coerced to 1)
-console.log(false + 1); // 1 (false is coerced to 0)
-1 == '1'; // true (implicit coercion)
-1 === '1'; // false (no coercion, strict equality)
-// Explicit coercion
-console.log(Number('5') + 1); // 6 (string '5' is explicitly converted to number)
+// 1. Implicit coercion (automatic)
+console.log('5' + 1); // '51' -> string concatenation
+console.log('5' - 1); // 4 -> number subtraction
+console.log(true + 1); // 2 -> true becomes 1
+console.log(false + 1); // 1 -> false becomes 0
+console.log(1 == '1'); // true -> loose equality converts the value
+console.log(1 === '1'); // false -> strict equality checks the type too
 
-// Truthy and Falsy values
-// In JavaScript, values can be classified as "truthy" or "falsy" when evaluated in a boolean context. Falsy values include false, 0, '', null, undefined, and NaN. All other values are considered truthy.
+// 2. Explicit coercion (manual)
+console.log(Number('5') + 1); // 6 -> the string is converted to a number
+
+// 3. Truthy and falsy values
+// Falsy values: false, 0, '', null, undefined, and NaN.
+// Everything else is truthy.
 if (1) {
-  console.log(5); // 5 (truthy value)
+  console.log(5); // Runs because 1 is truthy
 }
 
 if (0) {
-  console.log(5); // (falsy value, won't execute)
+  console.log(5); // Does not run because 0 is falsy
 }
 
--0 === +0; // true (both are falsy and considered equal)
-
-NaN === NaN; // false (NaN is not equal to itself)
+console.log(-0 === +0); // true -> both are treated as equal
+console.log(NaN === NaN); // false -> NaN is not equal to itself
