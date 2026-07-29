@@ -53,3 +53,23 @@ const obj = {
   c, // Shorthand property name
 };
 console.log(obj); // Output: { a: 'Simon', b: true, c: {} }
+
+// Template strings allow you to create strings that can include variables and expressions using backticks (`) and ${} syntax.
+const name = 'John';
+const age = 30;
+const greeting = `Hello, my name is ${name} and I am ${age} years old.`;
+console.log(greeting); // Output: Hello, my name is John and I am 30 years old.
+
+//Default arguments allow you to set default values for function parameters if no value or undefined is passed.
+function greet(name = 'Guest') {
+  return `Hello, ${name}!`;
+}
+
+//Symbols are a new primitive type introduced in ES6 that can be used to create unique identifiers for object properties.
+let sym1 = Symbol('description');
+let sym2 = Symbol('description');
+console.log(sym1 === sym2); // Output: false
+
+// Arrow Functions provide a shorter syntax for writing functions and do not have their own 'this' context.
+const add = (a, b) => a + b;
+console.log(add(2, 3)); // Output: 5
