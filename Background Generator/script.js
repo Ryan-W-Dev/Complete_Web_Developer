@@ -1,14 +1,22 @@
-// Select the color input elements and the body element
-var color1 = document.querySelector('#color1');
-var color2 = document.querySelector('#color2');
-var body = document.getElementById('gradient');
+// -----------------------------
+// 1) Get the elements we need
+// -----------------------------
+// These are the two color pickers and the element whose background we change.
+const color1 = document.querySelector('#color1');
+const color2 = document.querySelector('#color2');
+const body = document.getElementById('gradient');
 
-// Function to set the background gradient based on the selected colors
-function setGradient() {
-  body.style.background = 'linear-gradient(to right, ' + color1.value + ', ' + color2.value + ')';
-}
+// -----------------------------
+// 2) Build and apply the gradient
+// -----------------------------
+// This uses the current values from both inputs and sets a left-to-right gradient.
+const setGradient = () => {
+  body.style.background = `linear-gradient(to right, ${color1.value}, ${color2.value})`;
+};
 
-// Add event listeners to the color input elements to call setGradient when the user selects a new color
+// -----------------------------
+// 3) Listen for color changes
+// -----------------------------
+// Every time either picker changes, we update the background immediately.
 color1.addEventListener('input', setGradient);
-
 color2.addEventListener('input', setGradient);
