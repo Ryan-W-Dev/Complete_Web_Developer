@@ -22,6 +22,16 @@ for (const item in basket) {
   );
 }
 
+// Tiny object example: for...in is great for object keys
+const user = {
+  name: 'Alex',
+  city: 'Toronto',
+};
+
+for (const key in user) {
+  console.log(`${key}: ${user[key]}`);
+}
+
 // Example helper: add all item costs together
 function calculateTotalCost(basket) {
   let totalCost = 0;
