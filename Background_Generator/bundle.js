@@ -1757,7 +1757,7 @@
      *
      * **Security:** See
      * [threat model](https://github.com/lodash/lodash/blob/main/threat-model.md)
-     * ΓÇö `_.template` is insecure and will be removed in v5.
+     * — `_.template` is insecure and will be removed in v5.
      *
      * @static
      * @memberOf _
@@ -14285,7 +14285,7 @@
      * @returns {string} Returns the deburred string.
      * @example
      *
-     * _.deburr('d├⌐j├á vu');
+     * _.deburr('déjà vu');
      * // => 'deja vu'
      */
     function deburr(string) {
@@ -17262,10 +17262,12 @@
 
 }).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],2:[function(require,module,exports){
+// Use Lodash to remove a value from the array.
 var _ = require('lodash');
 
 var array = [1, 2, 3, 4, 5, 6, 7, 8];
 console.log('answer:', _.without(array, 3));
+
 var color1 = document.querySelector('#color1');
 var color2 = document.querySelector('#color2');
 var body = document.getElementById('gradient');
