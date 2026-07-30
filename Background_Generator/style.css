@@ -21,3 +21,20 @@ h2 {
   font-weight: bold;
   opacity: .4;
 }
+
+#color1,
+#color2 {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  margin: 25px;
+  border-radius: 10%;
+  border: 4px solid #ffffff;
+}
+
+#color1:hover,
+#color2:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}

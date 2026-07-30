@@ -1,22 +1,16 @@
-// -----------------------------
-// 1) Get the elements we need
-// -----------------------------
-// These are the two color pickers and the element whose background we change.
-const color1 = document.querySelector('#color1');
-const color2 = document.querySelector('#color2');
-const body = document.getElementById('gradient');
+// Use Lodash to remove a value from the array.
+var _ = require('lodash');
 
-// -----------------------------
-// 2) Build and apply the gradient
-// -----------------------------
-// This uses the current values from both inputs and sets a left-to-right gradient.
-const setGradient = () => {
+var array = [1, 2, 3, 4, 5, 6, 7, 8];
+console.log('answer:', _.without(array, 3));
+
+var color1 = document.querySelector('#color1');
+var color2 = document.querySelector('#color2');
+var body = document.getElementById('gradient');
+
+function setGradient() {
   body.style.background = `linear-gradient(to right, ${color1.value}, ${color2.value})`;
-};
+}
 
-// -----------------------------
-// 3) Listen for color changes
-// -----------------------------
-// Every time either picker changes, we update the background immediately.
 color1.addEventListener('input', setGradient);
 color2.addEventListener('input', setGradient);
