@@ -31,7 +31,7 @@ In this folder you will find the source files used to build and customize the po
 
 ## Author
 
-**Jacobo Martinez**  
+**Jacobo Martinez**
 https://github.com/cobidev
 
 ## Getting Started
