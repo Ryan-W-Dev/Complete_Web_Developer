@@ -1,6 +1,12 @@
 MIT License
 
-Copyright (c) 2019 Jacobo Martínez
+**Original Work Copyright (c) 2019 Jacobo Martínez**
+
+**Modified version - Current modifications and maintenance by Ryan-W-Dev**
+
+Original Project: [simplefolio](https://github.com/cobidev/simplefolio)
+
+---
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +25,11 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+## Modifications Notice
+
+This is a modified version of the original simplefolio project. The modifications and any additional work added to this version are also licensed under the same MIT License terms as outlined above.
+
+For the original unmodified version, please visit the [original project repository](https://github.com/cobidev/simplefolio).
