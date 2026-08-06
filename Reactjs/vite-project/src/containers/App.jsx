@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import CardList from '../CardList.jsx';
-import SearchBox from '../SearchBox.jsx';
+import CardList from '../components/CardList.jsx';
+import SearchBox from '../components/SearchBox.jsx';
 import './index.css';
+import Scroll from './scroll.jsx';
 
 const App = () => {
   const [searchfield, setSearchfield] = useState('');
@@ -28,25 +29,9 @@ const App = () => {
       <div>
         <h1 className="tc">RoboFriends</h1>
         <SearchBox searchChange={onSearchChange} />
-        <div
-          style={{
-            overflow: 'scroll',
-            border: '1px solid black',
-            height: '500px',
-            backgroundColor: 'lightblue',
-            borderRadius: '10px',
-            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
-            padding: '20px',
-            marginTop: '20px',
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: '20px',
-          }}
-        >
+        <Scroll>
           <CardList robots={filteredRobots} />
-        </div>
+        </Scroll>
       </div>
     );
   }
