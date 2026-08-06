@@ -2,7 +2,7 @@ import React, { useState } from 'react'; // import React and useState hook from 
 import CardList from './CardList'; // import CardList component
 import { robots } from './robots.jsx'; // import robots data
 import SearchBox from './SearchBox.jsx'; // import SearchBox component
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // import react-router-dom for routing
+import './index.css'; // import CSS files for styling
 // App component that manages the state of the search field and filters robots based on the search input
 const App = () => {
   const [searchfield, setSearchfield] = useState('');
