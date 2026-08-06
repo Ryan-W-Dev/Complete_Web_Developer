@@ -1,29 +1,57 @@
-import React, { useState } from 'react'; // import React and useState hook from 'react' library
-import CardList from './CardList'; // import CardList component
-import { robots } from './robots.jsx'; // import robots data
-import SearchBox from './SearchBox.jsx'; // import SearchBox component
-import './index.css'; // import CSS files for styling
-// App component that manages the state of the search field and filters robots based on the search input
+import React, { useState } from 'react';
+import CardList from './CardList';
+import SearchBox from './SearchBox.jsx';
+import './index.css';
+
 const App = () => {
   const [searchfield, setSearchfield] = useState('');
-  // useState hook to manage the state of the search field
+  const [robots, setRobots] = useState([]);
+
+  // fetching data from the API and updating the robots state
+  React.useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then((response) => response.json())
+      .then((users) => setRobots(users));
+  }, []);
+
   const onSearchChange = (event) => {
     setSearchfield(event.target.value);
   };
-  // Function to handle changes in the search input and update the searchfield state
+
   const filteredRobots = robots.filter((robot) => {
     return robot.name.toLowerCase().includes(searchfield.toLowerCase());
   });
-  // Render the App component with a title, SearchBox, and CardList
-  return (
-    <div>
-      <h1 className="tc">RoboFriends</h1>
-      <SearchBox searchChange={onSearchChange} />
-      <CardList robots={filteredRobots} />
-    </div>
-  );
+  if (robots.length === 0) {
+    return <h1 className="tc">Loading</h1>;
+  } else {
+    return (
+      <div>
+        <h1 className="tc">RoboFriends</h1>
+        <SearchBox searchChange={onSearchChange} />
+        <div
+          style={{
+            overflow: 'scroll',
+            border: '1px solid black',
+            height: '500px',
+            width: '800px',
+            margin: '0 auto',
+            backgroundColor: 'lightblue',
+            borderRadius: '10px',
+            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+            padding: '20px',
+            marginTop: '20px',
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '20px',
+          }}
+        >
+          <CardList robots={filteredRobots} />
+        </div>
+      </div>
+    );
+  }
 };
 
 export default App;
-
-// State management is done using the useState hook, and the search functionality is implemented by filtering the robots array based on the search input. The filtered robots are then passed to the CardList component for rendering.
