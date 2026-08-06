@@ -23,11 +23,11 @@ const App = () => {
     return robot.name.toLowerCase().includes(searchfield.toLowerCase());
   });
   if (robots.length === 0) {
-    return <h1 className="tc">Loading</h1>;
+    return <h1 className="text-center">Loading</h1>;
   } else {
     return (
       <div>
-        <h1 className="tc">RoboFriends</h1>
+        <h1 className="text-center">RoboFriends</h1>
         <SearchBox searchChange={onSearchChange} />
         <Scroll>
           <CardList robots={filteredRobots} />

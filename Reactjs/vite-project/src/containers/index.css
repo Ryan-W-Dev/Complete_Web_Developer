@@ -47,3 +47,69 @@ h2 {
 p {
   margin: 0;
 }
+
+.text-center {
+  text-align: center;
+}
+
+.searchbox-wrap {
+  padding: 0.5rem;
+}
+
+.searchbox-input {
+  width: min(30rem, 90vw);
+  padding: 0.75rem 1rem;
+  border: 2px solid #0ea5a4;
+  border-radius: 0.625rem;
+  background: #e0f7ff;
+  color: #0f172a;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.searchbox-input:focus {
+  border-color: #0284c7;
+  box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.18);
+}
+
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+.card {
+  text-align: center;
+  background: linear-gradient(180deg, #7c3aed, #6d28d9);
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.18);
+  color: #ffffff;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.card h2,
+.card p,
+.card h3 {
+  color: #ffffff;
+}
+
+.card h3 {
+  margin: 0 0 0.5rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 14px 24px rgba(15, 23, 42, 0.26);
+}
+
+.card img {
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+}
