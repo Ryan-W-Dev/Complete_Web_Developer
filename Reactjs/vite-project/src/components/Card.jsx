@@ -1,5 +1,5 @@
 import React from 'react'; // import React from 'react'; // import React library
-import { robots } from './robots.jsx'; // import robots data
+import { robots } from '../robots.jsx'; // import robots data
 
 // Card component that takes in id, name, and email as props
 const Card = ({ id, name, email }) => {
