@@ -33,8 +33,6 @@ const App = () => {
             overflow: 'scroll',
             border: '1px solid black',
             height: '500px',
-            width: '800px',
-            margin: '0 auto',
             backgroundColor: 'lightblue',
             borderRadius: '10px',
             boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
